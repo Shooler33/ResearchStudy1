@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/singlePageTemplate.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+
+    <title>
+
+        CCSU Survey
+    </title>
+
+    <style>
+        /* Styling the Body element i.e. Color,
+        Font, Alignment */
+        body {
+            background-color: #474747;
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        form-inline {}
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 80%;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #848484;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hidden {}
+
+        #tab-key {}
+
+        #tab-key {}
+
+        #tab-key {}
+
+        #hidden {}
+
+        #enter-key {}
+    </style>
+
+
+    <datalist id="CodingLangs" style="max-width: !important">
+        <option value="scrumptious">
+        <option value="festive">
+        <option value="exhausted">
+        <option value="curious">
+        <option value="labor">
+        <option value="minamlist">
+        <option value="companionship">
+		<option value="intellectual">
+		<option value="sequencing">
+		<option value="genome">
+		<option value="laboratory">
+		<option value="colleagues">
+		<option value="assistance">
+		<option value="company">
+		<option value="hubub">
+		<option value="gathering">
+		<option value="merry">
+		<option value="movement">
+		<option value="diversity">
+		<option value="harmony">
+		<option value="warm">
+		<option value="precisely">
+		<option value="heartfeld">
+		<option value="disagreement">
+		<option value="instructor">
+		<option value="picky">
+		<option value="acquaintances">
+		<option value="celebratory">
+		<option value="mediation">
+		<option value="explore">
+		<option value="massive">
+		<option value="tolerate">
+		<option value="cherish">
+		<option value="juvenille">
+		<option value="infection">
+		<option value="predict">
+		<option value="confusion">
+		<option value="marketing">
+		<option value="compromise">
+		<option value="strategy">
+		<option value="insecure">
+		<option value="intention">
+		<option value="examine">
+		<option value="workplace">
+		<option value="division">
+		<option value="struggle">
+		<option value="comfort">
+		<option value="dramatic">
+		<option value="interest">
+		<option value="memorize">
+		<option value="contribution">
+		<option value="passionate">
+		<option value="politics">
+		<option value="combine">
+		
+			
+			
+	</datalist>
+
+
+    <script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text2")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text1")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+	
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text3")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text4")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+	
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text5")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+
+
+
+	
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text6")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+	
+	
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text7")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+	
+	
+	
+	
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text8")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+
+
+
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text9")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+
+	
+	
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text10")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+
+	
+	
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text11")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text12")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text13")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+	
+	
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text14")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+
+
+	
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text14")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+
+	
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text15")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+	
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text16")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+
+	
+	
+	<script>
+        var availableTags = Array.from(document.getElementById("CodingLangs").options).map(a => a.value);
+        function split(val) {
+            return val.split(/ \s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        $(function () {
+            $("#text17")
+                // don't navigate away from the field on tab when selecting an item
+                .on("keydown", function (event) {
+                    if (event.keyCode === $.ui.keyCode.TAB &&
+                        $(this).autocomplete("instance").menu.active) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function (request, response) {
+                        // delegate back to autocomplete, but extract the last term
+                        response($.ui.autocomplete.filter(
+                            availableTags, extractLast(request.term)));
+                    },
+                    focus: function () {
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        var terms = split(this.value);
+                        // remove the current input
+                        terms.pop();
+                        // add the selected item
+                        terms.push(ui.item.value);
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push("");
+                        this.value = terms.join(" ");
+                        return false;
+                    }
+                });
+        });
+    </script>
+
+    <script src="myScript.js"></script>
+
+
+</head>
+
+
+
+<body class="Body1">
+
+
+    <!-- Create Form -->
+    <form action="" class="form-control" id="form1">
+
+        <!-- Details -->
+        <section class="Normal" id="Directions1" style="text-align:left">
+            <h2 class="Normal">Directions:</h2>
+            <p> Please write two-sentene stories about each picture. <br> 
+Please type VERY slowly; our algorithm cannot keep up with fast typing.&nbsp;&nbsp;</p> <br>
+
+
+<img src="Aliens4.png" alt="alien" width="400 px"/>
+
+            <div class="form-control">
+                <label for="Question1" id="Question-1">
+                    Question 1&nbsp; &nbsp;&nbsp; </label>
+                            <input type="text" name="text1" id="text1" placeholder="Type Here" autocomplete="off" required>
+ </div>
+		
+            <div class="form-control">
+                <label for="Question2" id="Question-2">
+                    Question 2&nbsp; &nbsp; &nbsp; </label>
+
+                <input type="text" name="text2" id="text2" placeholder="Type Here" autocomplete="off">
+
+            </div>
+			
+			<img src="business.png" alt="Business" width="400 px">
+
+            <div class="form-control">
+                <label for="Question3" id="Question-3">
+                    Question 3&nbsp; &nbsp;&nbsp; </label>
+
+
+                <input type="text" name="text3" id="text3" placeholder="Type Here" autocomplete="off" 
+                    required>
+
+
+            </div>
+
+
+            <div class="form-control">
+                <label for="Question4" id="Question-4">
+                    Question 4&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </label>
+
+
+                <input type="text" name="text4" id="text4" placeholder="Type Here" autocomplete="off" required>
+
+            </div>
+
+			
+			<img src="bills.png" alt:"bills" width="400px" />
+
+            <div class="form-control">
+                <label for="Question5" id="Question-5">
+                    Question 5&nbsp;&nbsp; </label>
+                <input type="text" name="text5" id="text5" placeholder="Type Here" autocomplete="off" required>
+</div>
+			
+			
+            <div class="form-control">
+                <label for="Question7" id="Question-7">
+                    Question 6&nbsp; &nbsp; &nbsp; </label>
+
+
+                <input type="text" name="text7" id="text7" placeholder="Type Here" autocomplete="off" required>
+
+            </div>
+			
+			
+			<img src="scientists.png" alt="Scientists" width="400 px"/>
+			
+
+            <div class="form-control">
+                <label for="Question8" id="Question-8">
+                    Question 7&nbsp; &nbsp; &nbsp; </label>
+
+
+                <input type="text" name="text8" id="text8" placeholder="Type Here" autocomplete="off" required>
+
+
+            </div>
+
+            <div class="form-control">
+                <label for="Question10" id="Question-10">
+                    Question 8&nbsp; &nbsp; &nbsp; </label>
+
+
+                <input type="text" name="text10" id="text10" placeholder="Type Here" autocomplete="off" required>
+
+            </div>
+			
+			<img src="grandma.png" alt="People" width="400 px"/>
+
+            <div class="form-control">
+                <label for="Question11" id="Question-11">
+                    Question 9&nbsp; &nbsp; &nbsp;&nbsp; </label>
+
+
+                <input type="text" name="text11" id="text11" placeholder="Type Here" autocomplete="off" required>
+
+            </div>
+
+
+            <div class="form-control">
+                <label for="Question12" id="Question-12">
+                    Question 10&nbsp; &nbsp;&nbsp; </label>
+
+
+
+                <input type="text" name="text12" id="text12" placeholder="Type Here" autocomplete="off" required>
+                <span class="suggestion-container"></span>
+                <div class="icons-container">
+                </div>
+
+        
+				
+				<img src="clowns.png" alt="Clowns" width="400 px"
+
+                <div class="form-control">
+                    <label for="Question13" id="Question-13">
+                        Question 11&nbsp; &nbsp; &nbsp; </label>
+
+
+
+                    <input type="text" name="text13" id="text13" placeholder="Type Here" autocomplete="off" required>
+                    <span class="suggestion-container"></span>
+                    <div class="icons-container">
+
+                    </div>
+
+                    <br>
+
+                    <div class="form-control">
+                        <label for="Question14" id="Question-14">
+                           Question 12&nbsp; &nbsp; &nbsp; </label>
+
+
+
+                        <input type="text" name="text14" id="text14" placeholder="Type Here" autocomplete="off"
+                            required>
+                        <span class="suggestion-container"></span>
+                        <div class="icons-container">
+
+                        </div>
+                       
+						
+						<img src="violin.png" alt="Violin" width="400 px"
+						
+						
+						
+
+                        <div class="form-control">
+                            <label for="Question15" id="Question-15">
+                                Question 13&nbsp; &nbsp; &nbsp;&nbsp; </label>
+
+
+
+                            <input type="text" name="text15" id="text15" placeholder="Type Here" autocomplete="off"
+                                required>
+                            <span class="suggestion-container"></span>
+                            <div class="icons-container">
+
+                            </div>
+
+                            <br>
+
+                            <div class="form-control">
+                                <label for="Question15" id="Question-15">
+                                    Question 14&nbsp; &nbsp; &nbsp; &nbsp; </label>
+
+
+
+                                <input type="text" name="text15" id="text15" placeholder="Type Here" autocomplete="off"
+                                    required>
+                                <span class="suggestion-container"></span>
+                                <div class="icons-container">
+
+                                </div>
+
+                                
+								<img src="meerkats.png" alt="meerkats" width="400 px"/>
+								
+								
+
+                                <div class="form-control">
+                                    <label for="Question16" id="Question-16">
+                                        Question 15&nbsp; &nbsp; &nbsp;&nbsp; </label>
+
+
+
+                                    <input type="text" name="text16" id="text16" placeholder="Type Here"
+                                        autocomplete="off" required>
+                                    <span class="suggestion-container"></span>
+                                    <div class="icons-container">
+
+                                    </div>
+
+                                    <br>
+
+                                    <div class="form-control">
+                                        <label for="Question17" id="Question-17">
+                                            Question 16&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </label>
+
+
+
+                                        <input type="text" name="text17" id="text17" placeholder="Type Here"
+                                            autocomplete="off" required>
+                                        <span class="suggestion-container"></span>
+                                        <div class="icons-container">
+
+                                        </div>
+
+                                        <br>
+
+                                        <a href="ConsentPage1.html">
+                                            <input type="submit" value="Submit">
+                                        </a>
+
+    </form>
+
+</body>
+
+</html>
