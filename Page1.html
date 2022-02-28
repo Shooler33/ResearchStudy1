@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+	
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
@@ -23,7 +24,19 @@ function SubForm (){
         data:$("#myForm").serializeArray(),
         success: function(){
           alert("Form Data Submitted :)")
-		 window.location.href = 'RedoDemographics.html';	
+			if (document.getElementById("Group_Number").value == 4)
+				{ window.location.href= 'Page2PredictI.html'; }
+			
+			else if(document.getElementById("Group_Number").value == 3)
+				{ window.location.href= 'Page2PredictV.html'; }
+			
+			
+			else if(document.getElementById("Group_Number").value == 2)
+				{ window.location.href= 'Page2C'; }
+			
+			
+			else if(document.getElementById("Group_Number").value == 1)
+				{ window.location.href= 'Page2PredictS.html'; }
 			
         },
         error: function(){
@@ -133,23 +146,23 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
 <body class="Body1">
 
-
     <!-- Create Form -->
     <form id="myForm"/>
-<section class="hero" id="hero"<h3>Progress</h3> <br>
-<progress value = "7" max = "10"/> </section>
+	
+	<section class="hero" id="hero"<h3>Progress</h3> <br>
+<progress value = "5" max = "8"/> </section>
+
         <!-- Details -->
         <section class="Normal" id="Directions1" style="text-align:left">
-            <h2 class="Normal">Page 3 <br>Directions:</h2>
+            <h2 class="Normal">Page 1 <br> Directions:</h2>
             <p style="font-size:20px"> &nbsp; Please write two-sentence stories about each picture. <br> 
-
 &nbsp; Please type slowly; our algorithm is compiling data as you type.<b> <br> 
 &nbsp; If you do not complete all questions and/ or do not use complete sentences, <br>
 &nbsp; you will not complete the task and will not be paid.</b></p>  
 			<p style="font-size:20px"> &nbsp; Feel free to be creative!</p>
 
 
-<img src="Island.png" alt="Island" width="400 px"/>
+<img src="Catbusiness.png" alt="cats" width="400 px"/>
 
             <div class="form-control">
                 <label for="Question1" id="Question-1">
@@ -165,7 +178,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
             </div>
 			
-			<img src="Knights.png" alt="Knights" width="400 px">
+			<img src="Doctors.png" alt="doctors" width="400 px">
 
             <div class="form-control">
                 <label for="Question3" id="Question-3">
@@ -188,7 +201,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
             </div>
 
 			
-			<img src="Mice.png" alt:"Mice" width="400px" />
+			<img src="Hike.png" alt:"hike" width="400px" />
 
             <div class="form-control">
                 <label for="Question5" id="Question-5">
@@ -207,7 +220,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
             </div>
 			
 			
-			<img src="Teacher.png" alt="Teacher" width="400 px"/>
+			<img src="Line.png" alt="line" width="400 px"/>
 			
 
             <div class="form-control">
@@ -229,7 +242,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
             </div>
 			
-			<img src="Women.png" alt="Women" width="400 px"/>
+			<img src="Magician.png" alt="magician" width="400 px"/>
 
             <div class="form-control">
                 <label for="Question9" id="Question-9">
@@ -254,7 +267,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
         
 				
-				<img src="Superheroes.png" alt="Superheroes" width="400 px"
+				<img src="Pandas.png" alt="pandas" width="400 px"
 
                 <div class="form-control">
                     <label for="Question11" id="Question-11">
@@ -284,7 +297,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                         </div>
                        
 						
-						<img src="Sleeping.png" alt="Sleeping" width="400 px"
+						<img src="Movie.png" alt="movie" width="400 px"
 						
 						
 						
@@ -324,7 +337,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                                 </div>
 
                                 
-								<img src="Girl_ice_Cream.png" alt="Ice_cream" width="400 px"/>
+								<img src="Therapist.png" alt="therapist" width="400 px"/>
 								
 								
 
@@ -357,6 +370,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                                         </div>
 										
 										 <input type="hidden" name="timestamp" id="timestamp" value="time" </input>
+	<input type="hidden" name="Group_Number" id="Group_Number" value="test"</input>
 										<input type="hidden" name="PageNumber" id="PageNumber" value="Diagnostic" </input>
 										<input type="hidden" name="IP-Address" id="IP-Address" </input>
 										
@@ -387,16 +401,25 @@ function getIP(json) {
 
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 	
-
+	<script>
+		
+			
+			
+		var STEP1 = Math.floor( Math.random() * 4 ) + 1;
+					
+			document.getElementById("Group_Number").value = STEP1;
+	
+	</script>
 	 <br>
 									
 	<p style:"font-size=30px"> Before pressing submit, please check to ensure you have answered all questions and have used complete sentences. <br> <br> <b> If you do not, you will not complete the task and will not be paid. </b>     
 								
 								</p>
 	<br>
+								<label> I Understand</label>	<input type=radio value="yes" name="yes" required</input>
 	
- <button class="button" onclick="SubForm()">Submit</button>
-
+ <button class="button" id="subbutton" onclick="SubForm()" >Submit</button>
+									
 	
 </body>
 

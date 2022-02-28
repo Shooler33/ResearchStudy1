@@ -9,12 +9,13 @@
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" ></script>
 
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+
+    <title>
+
+        CCSU Survey
+    </title>
 <script>
 function SubForm (){
     $.ajax({
@@ -23,7 +24,8 @@ function SubForm (){
         data:$("#myForm").serializeArray(),
         success: function(){
           alert("Form Data Submitted :)")
-		 window.location.href = 'RedoDemographics.html';	
+		window.location.href = 'Post-Assessment.html';	
+			
 			
         },
         error: function(){
@@ -41,11 +43,6 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 		 document.getElementById('timestamp').value = time;
 
 </script>
-    <title>
-
-        CCSU Survey
-    </title>
-
     <style>
         /* Styling the Body element i.e. Color,
         Font, Alignment */
@@ -124,38 +121,36 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
         #enter-key {}
     </style>
-	
-	
-	
-  </head>
 
 
+
+
+</head>
 
 <body class="Body1">
-
-
+ 
     <!-- Create Form -->
-    <form id="myForm"/>
-<section class="hero" id="hero"<h3>Progress</h3> <br>
-<progress value = "7" max = "10"/> </section>
+<form id="myForm"/>
+
+	<section class="hero" id="hero"<h3>Progress</h3> <br>
+<progress value = "6" max = "8"/> </section>
         <!-- Details -->
         <section class="Normal" id="Directions1" style="text-align:left">
-            <h2 class="Normal">Page 3 <br>Directions:</h2>
+            <h2 class="Normal">Page 2 <br> Directions:</h2>
             <p style="font-size:20px"> &nbsp; Please write two-sentence stories about each picture. <br> 
-
 &nbsp; Please type slowly; our algorithm is compiling data as you type.<b> <br> 
 &nbsp; If you do not complete all questions and/ or do not use complete sentences, <br>
 &nbsp; you will not complete the task and will not be paid.</b></p>  
 			<p style="font-size:20px"> &nbsp; Feel free to be creative!</p>
-
-
-<img src="Island.png" alt="Island" width="400 px"/>
-
+			
+			<img src="Aliens4.png" alt="alien" width="400 px"/>
+			
+			
             <div class="form-control">
                 <label for="Question1" id="Question-1">
-                    Question 1&nbsp; &nbsp;&nbsp; </label>
+              Question 1&nbsp; &nbsp;&nbsp; </label>
                             <input type="text" name="text1" id="text1" placeholder="Type Here" autocomplete="off" required >
- </div>
+</div>
 		
             <div class="form-control">
                 <label for="Question2" id="Question-2">
@@ -165,10 +160,9 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
             </div>
 			
-			<img src="Knights.png" alt="Knights" width="400 px">
-
+			<img src="business.png" alt="Business" width="400 px"> 
             <div class="form-control">
-                <label for="Question3" id="Question-3">
+    <label for="Question3" id="Question-3">
                     Question 3&nbsp; &nbsp;&nbsp; </label>
 
 
@@ -188,10 +182,9 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
             </div>
 
 			
-			<img src="Mice.png" alt:"Mice" width="400px" />
-
+			<img src="bills.png" alt:"bills" width="400px" /> 
             <div class="form-control">
-                <label for="Question5" id="Question-5">
+    <label for="Question5" id="Question-5">
                     Question 5&nbsp;&nbsp; </label>
                 <input type="text" name="text5" id="text5" placeholder="Type Here" autocomplete="off" required>
 </div>
@@ -207,18 +200,16 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
             </div>
 			
 			
-			<img src="Teacher.png" alt="Teacher" width="400 px"/>
-			
-
-            <div class="form-control">
-                <label for="Question7" id="Question-7">
+			<img src="scientists.png" alt="Scientists" width="400 px"/>
+<div class="form-control">
+    <label for="Question7" id="Question-7">
                     Question 7&nbsp; &nbsp; &nbsp; </label>
 
 
                 <input type="text" name="text7" id="text7" placeholder="Type Here" autocomplete="off" required>
 
 
-            </div>
+</div>
 
             <div class="form-control">
                 <label for="Question8" id="Question-8">
@@ -229,16 +220,15 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
             </div>
 			
-			<img src="Women.png" alt="Women" width="400 px"/>
-
-            <div class="form-control">
-                <label for="Question9" id="Question-9">
+			<img src="grandma.png" alt="People" width="400 px"/>
+<div class="form-control">
+    <label for="Question9" id="Question-9">
                     Question 9&nbsp; &nbsp; &nbsp;&nbsp; </label>
 
 
                 <input type="text" name="text9" id="text9" placeholder="Type Here" autocomplete="off" required>
 
-            </div>
+</div>
 
 
             <div class="form-control">
@@ -254,7 +244,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
         
 				
-				<img src="Superheroes.png" alt="Superheroes" width="400 px"
+				<img src="Clowns.png" alt="Clowns" width="400 px"
 
                 <div class="form-control">
                     <label for="Question11" id="Question-11">
@@ -284,7 +274,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                         </div>
                        
 						
-						<img src="Sleeping.png" alt="Sleeping" width="400 px"
+						<img src="Violin.png" alt="Violin" width="400 px" />
 						
 						
 						
@@ -310,6 +300,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
 
 
+
                                 <input type="text" name="text14" id="text14" placeholder="Type Here" autocomplete="off"
                                     required>
                                 <span class="suggestion-container"></span>
@@ -321,11 +312,11 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 									
 									
 
-                                </div>
+</div>
 
                                 
-								<img src="Girl_ice_Cream.png" alt="Ice_cream" width="400 px"/>
 								
+								<img src="Meerkats.png" alt="Meerkats" width="400px"/>
 								
 
                                 <div class="form-control">
@@ -357,10 +348,13 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                                         </div>
 										
 										 <input type="hidden" name="timestamp" id="timestamp" value="time" </input>
-										<input type="hidden" name="PageNumber" id="PageNumber" value="Diagnostic" </input>
+	
+										<input type="hidden" name="PageNumber" id="PageNumber" value="TreatmentSmallList" </input>
 										<input type="hidden" name="IP-Address" id="IP-Address" </input>
 										
 	  </form>
+
+    </form>
 <script>
 var today = new Date();
 var time = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+ "," +today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -370,7 +364,7 @@ var time = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+ ","
 
 </script>
 	
-	<script>
+<script>
 function getIP(json) {
   
 }
@@ -379,7 +373,7 @@ function getIP(json) {
 
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"> </script>
 	
-	<script type="application/javascript">
+<script type="application/javascript">
   function getIP(json) {
     document.getElementById("IP-Address", json.ip).value = json.ip;
   }
@@ -387,17 +381,13 @@ function getIP(json) {
 
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 	
+<br>
 
-	 <br>
-									
-	<p style:"font-size=30px"> Before pressing submit, please check to ensure you have answered all questions and have used complete sentences. <br> <br> <b> If you do not, you will not complete the task and will not be paid. </b>     
+<p style:"font-size=30px"> Before pressing submit, please check to ensure you have answered all questions and have used complete sentences. <br> <br> <b> If you do not, you will not complete the task and will not be paid. </b>     
 								
 								</p>
 	<br>
-	
  <button class="button" onclick="SubForm()">Submit</button>
-
-	
 </body>
 
 </html>

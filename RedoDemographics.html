@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Light Theme</title>
+<title>CCSU Study</title>
 <link href="css/singlePageTemplate.css" rel="stylesheet" type="text/css">
 <link href="Bodysurvey.css" rel="stylesheet" type="text/css">
 <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
@@ -43,13 +43,16 @@ function SubForm (){
 	
 	
 </head>
+	<section class="hero" id="hero"<h3>Progress</h3> 
+<progress value = "8" max = "8"/> </section> <br>
 	
+	<form id="myForm">
 	
-	
-	<header <h1> <b> Please answer the following demographic questions.</b> </h1> </header> <br> 
+	<header <h1> <b> Please answer the following demographic questions.</b> </h1> </header> <br>
 	<body>
-<form id="myForm">
+
  
+	
    <! Gender here >     
 	
         <div class="form-control">
@@ -86,7 +89,7 @@ function SubForm (){
             </label>
  
             <!-- Input Type Text -->
-            <input name="age" type="number" oninput="this.value=(parseInt(this.value)||0)" autofocus="" value="age"
+            <input name="age" type="number" oninput="this.value=(parseInt(this.value)||0 && this.value=(parseInt(this.value)<100)" autofocus="" value="age"
                    id="age-answer" placeholder="Enter your age" required />
 		
         </div> <br>
@@ -291,7 +294,7 @@ function getIP(json) {
   <br><br>
 	<p style:"font-size=20px"><b>Please make sure you have submitted a response for all questions before clicking submit or else you will not receive compensation.</b></p>
 	
-	 <button onclick="SubForm()">Submit</button>
+	 <button class="button" onclick="SubForm()">Submit</button>
        
 	   </form>
 	
