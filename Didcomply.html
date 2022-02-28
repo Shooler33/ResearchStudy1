@@ -71,7 +71,6 @@ function SubForm (){
   </label><br>
 	
 	
-<button class="button" onclick="SubForm()">Submit</button>
 
   <!-- About Section -->
  
@@ -79,8 +78,7 @@ function SubForm (){
  
   <!-- Copyrights Section -
 <!-- Main Container Ends -->
-</body>
-	
+
 	<script>
 var today = new Date();
 var time = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+ "," +today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -106,4 +104,11 @@ function getIP(json) {
 </script>
 
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+				
+				 <button class="button" id="subbutton" onclick="SubForm()" >Submit</button>
+									
+	
+</body>
+
+
 </html>
