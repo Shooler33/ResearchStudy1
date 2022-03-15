@@ -25,7 +25,7 @@ function SubForm (){
         data:$("#myForm").serializeArray(),
         success: function(){
           alert("Form Data Submitted :)")
-		window.location.href = 'Didcomply.html';	
+		window.location.href = 'ThankYouComplete.html';	
 			
 			
         },
@@ -36,50 +36,125 @@ function SubForm (){
 }
 </script>
 	
+	 <style>
+        /* Styling the Body element i.e. Color,
+        Font, Alignment */
+        body {
+            background-color: #474747;
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        form-inline {}
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 80%;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #E6E6E6;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hidden {}
+
+        #tab-key {}
+
+        #tab-key {}
+
+        #tab-key {}
+
+        #hidden {}
+
+        #enter-key {}
+    </style>
+
 	
 </head>
-<body>
-<!-- Main Container -->
-<div class="container" style="text-align:center"> 
-  <!-- Navigation -->
-  <header> <a href="">
-    <h4 class="logo">2021</h4>
-    </a>
-  </header>
-  <!-- Hero Section -->
-<section class="hero" id="hero"<h3>Progress</h3> <br>
+
+
+
+<body class="Body1">
+ 
+    <!-- Create Form -->
+<form id="myForm"/>
+
+        <!-- Details -->
+        <section class="hero" id="hero"<h3>Progress</h3> <br>
       <progress value = "8" max = "8"/> 
 		 
 		 </section> 
   <section class="hero" id="hero">
-    <h2 class="hero_header">&nbsp;Please Read: </h2>
+    <h2 class="hero_header">&nbsp;This study is for scientific research. Therefore, we want our data to be as accurate as possible. Please indicate below whether you completed this study to the best of your ability. You will still be compensated if you answer no.  </h2>
  
   </section> 
-	<h2 class="hero_header">This study is for scientific research.<br>It is important that you answered these questions<br>honestly and to the best of your ability.<br><br><b>The answer to the question below<br> will not affect if you are compensated.</b></h2> <br> <br> 
-			 
-	 <div class="form-control">
-            <label for="compliance" name="compliance" id="compliance" class="hero_header">
-				<b class="hero_header">Did you answer these questions honestly<br>and to the best of your ability?</b> <br><br>
-  <label>
-    <input type="radio" name="compliance" value="yes" class="hero_header">
-    Yes
-  </label><br>
+			
+			
+            <div class="form-control">
+                <label for="compliance" id="compliance">
+              Please type yes or no&nbsp; &nbsp;&nbsp; </label>
+                            <input type="text" name="compliance" id="compliance" placeholder="Type Yes or No" autocomplete="off">
+</div>
+		
+      
 
-  <label>
-    <input type="radio" name="compliance" value="no" class="hero_header">
-    No
-  </label><br>
+
+
+                                    
+										
+										 <input type="hidden" name="timestamp" id="timestamp" value="time" </input>
 	
-	
-
-  <!-- About Section -->
- 
-  <!-- Footer Section -->
- 
-  <!-- Copyrights Section -
-<!-- Main Container Ends -->
-
-	<script>
+										<input type="hidden" name="PageNumber" id="PageNumber" value="TreatmentSmallList" </input>
+										<input type="hidden" name="IP-Address" id="IP-Address" </input>
+										
+	  </form>
+<script>
 var today = new Date();
 var time = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+ "," +today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   document.getElementById("timestamp").value = time;
@@ -104,11 +179,14 @@ function getIP(json) {
 </script>
 
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
-				
-				 <button class="button" id="subbutton" onclick="SubForm()" >Submit</button>
-									
 	
-</body>
+<br>
 
+	<br>
+ <button class="button" onclick="SubForm()">Submit</button>
+	
+
+</body>
+	
 
 </html>
