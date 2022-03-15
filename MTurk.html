@@ -1,22 +1,21 @@
-<!doctype html>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CCSU Study</title>
-<link href="css/singlePageTemplate.css" rel="stylesheet" type="text/css">
-<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
-<script>var __adobewebfontsappname__="dreamweaver"</script>
-<script src="http://use.edgefonts.net/source-sans-pro:n2:default.js" type="text/javascript"></script>
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	
-	  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/singlePageTemplate.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" ></script>
+
+
+    <title>
+
+        CCSU Survey
+    </title>
 <script>
 function SubForm (){
     $.ajax({
@@ -37,17 +36,104 @@ function SubForm (){
 </script>
 	
 	
+	<script>
+var today = new Date();
+
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		 document.getElementById('timestamp').value = time;
+
+</script>
+    <style>
+        /* Styling the Body element i.e. Color,
+        Font, Alignment */
+        body {
+            background-color: #474747;
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        form-inline {}
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 80%;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #E6E6E6;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hidden {}
+
+        #tab-key {}
+
+        #tab-key {}
+
+        #tab-key {}
+
+        #hidden {}
+
+        #enter-key {}
+    </style>
+
+
+
+
 </head>
-<body>
-<!-- Main Container -->
-<div class="container" style="text-align:center"> 
-  <!-- Navigation -->
-  <header> <a href="">
-    <h4 class="logo">2021</h4>
-    </a>
-  </header>
-  <!-- Hero Section -->
-<section class="hero" id="hero"<h3>Progress</h3> <br>
+
+<body class="Body1">
+ 
+    <!-- Create Form -->
+<form id="myForm"/>
+
+        <!-- Details -->
+        <section class="hero" id="hero"<h3>Progress</h3> <br>
       <progress value = "0" max = "8"/> 
 		 
 		 </section> 
@@ -55,16 +141,27 @@ function SubForm (){
     <h2 class="hero_header">&nbsp;Please Enter Your MTurk ID: </h2>
  
   </section> 
-<div class="form-control">
-  <input type="text" name="MTurk" placeholder="Enter ID here" id="MTurk" width="maximum">
-          
- <br>
-	  <br>
-  
+			
+			
+            <div class="form-control">
+                <label for="Question1" id="Question-1">
+              Please Enter Your MTURK ID&nbsp; &nbsp;&nbsp; </label>
+                            <input type="text" name="MTurk" id="MTurk" placeholder="Type Here" autocomplete="off" required >
 </div>
+		
+      
 
+
+
+                                    
+										
+										 <input type="hidden" name="timestamp" id="timestamp" value="time" </input>
 	
-	<script>
+										<input type="hidden" name="PageNumber" id="PageNumber" value="TreatmentSmallList" </input>
+										<input type="hidden" name="IP-Address" id="IP-Address" </input>
+										
+	  </form>
+<script>
 var today = new Date();
 var time = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+ "," +today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   document.getElementById("timestamp").value = time;
@@ -90,10 +187,13 @@ function getIP(json) {
 
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 	
+<br>
+
+	<br>
+ <button class="button" onclick="SubForm()">Submit</button>
 	
-	 <button class="button" id="subbutton" onclick="SubForm()" >Submit</button>
-									
-	
+
 </body>
+	
 
 </html>
