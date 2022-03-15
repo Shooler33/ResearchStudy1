@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-	
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
@@ -25,18 +24,18 @@ function SubForm (){
         success: function(){
           alert("Form Data Submitted :)")
 			if (document.getElementById("Group_Number").value == 4)
-				{ window.location.href= 'Page2PredictI.html'; }
+				{ window.location.href= 'Page2PredictS.html'; }
 			
 			else if(document.getElementById("Group_Number").value == 3)
 				{ window.location.href= 'Page2PredictV.html'; }
 			
 			
 			else if(document.getElementById("Group_Number").value == 2)
-				{ window.location.href= 'Page2C'; }
+				{ window.location.href= 'Page2C.html'; }
 			
 			
 			else if(document.getElementById("Group_Number").value == 1)
-				{ window.location.href= 'Page2PredictS.html'; }
+				{ window.location.href= 'Page2PredictI.html'; }
 			
         },
         error: function(){
@@ -60,7 +59,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
     </title>
 
     <style>
-        /* Styling the Body element i.e. Color,
+            /* Styling the Body element i.e. Color,
         Font, Alignment */
         body {
             background-color: #474747;
@@ -114,7 +113,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
         /* Styling Button */
         button {
-            background-color: #CDCDCD;
+            background-color: #E6E6E6;
             border: 1px solid #777;
             border-radius: 2px;
             font-family: inherit;
@@ -140,21 +139,25 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 	
 	
 	
+	
+	
   </head>
 
 
 
 <body class="Body1">
 
+
     <!-- Create Form -->
     <form id="myForm"/>
 	
-	<section class="hero" id="hero"><h3>Progress</h3> <br>
-<progress value = "5" max = "8"/> </section>
+	<section progress value = "5" max = "8"/> </section>
+
+
 
         <!-- Details -->
         <section class="Normal" id="Directions1" style="text-align:left">
-            <h2 class="Normal">Page 1 <br> Directions:</h2>
+            <h2 class="Normal">Directions:</h2>
             <p style="font-size:20px"> &nbsp; Please write two-sentence stories about each picture. <br> 
 &nbsp; Please type slowly; our algorithm is compiling data as you type.<b> <br> 
 &nbsp; If you do not complete all questions and/ or do not use complete sentences, <br>
@@ -167,14 +170,14 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
             <div class="form-control">
                 <label for="Question1" id="Question-1">
                     Question 1&nbsp; &nbsp;&nbsp; </label>
-                            <input type="text" name="text1" id="text1" placeholder="Type Here" autocomplete="off">
+                            <input type="text" name="text1" id="text1" placeholder="Type Here" autocomplete="off" required >
  </div>
 		
             <div class="form-control">
                 <label for="Question2" id="Question-2">
                     Question 2&nbsp; &nbsp; &nbsp; </label>
 
-                <input type="text" name="text2" id="text2" placeholder="Type Here" autocomplete="off">
+                <input type="text" name="text2" id="text2" placeholder="Type Here" autocomplete="off" required>
 
             </div>
 			
@@ -185,7 +188,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                     Question 3&nbsp; &nbsp;&nbsp; </label>
 
 
-                <input type="text" name="text3" id="text3" placeholder="Type Here" autocomplete="off">
+                <input type="text" name="text3" id="text3" placeholder="Type Here" autocomplete="off" required>
 
 
             </div>
@@ -196,7 +199,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                     Question 4&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </label>
 
 
-                <input type="text" name="text4" id="text4" placeholder="Type Here" autocomplete="off" >
+                <input type="text" name="text4" id="text4" placeholder="Type Here" autocomplete="off" required>
 
             </div>
 
@@ -206,7 +209,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
             <div class="form-control">
                 <label for="Question5" id="Question-5">
                     Question 5&nbsp;&nbsp; </label>
-                <input type="text" name="text5" id="text5" placeholder="Type Here" autocomplete="off" >
+                <input type="text" name="text5" id="text5" placeholder="Type Here" autocomplete="off" required>
 </div>
 			
 			
@@ -215,7 +218,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                     Question 6&nbsp; &nbsp; &nbsp; </label>
 
 
-                <input type="text" name="text6" id="text6" placeholder="Type Here" autocomplete="off" >
+                <input type="text" name="text6" id="text6" placeholder="Type Here" autocomplete="off" required>
 
             </div>
 			
@@ -228,7 +231,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                     Question 7&nbsp; &nbsp; &nbsp; </label>
 
 
-                <input type="text" name="text7" id="text7" placeholder="Type Here" autocomplete="off" >
+                <input type="text" name="text7" id="text7" placeholder="Type Here" autocomplete="off" required>
 
 
             </div>
@@ -238,7 +241,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                     Question 8&nbsp; &nbsp; &nbsp; </label>
 
 
-                <input type="text" name="text8" id="text8" placeholder="Type Here" autocomplete="off" >
+                <input type="text" name="text8" id="text8" placeholder="Type Here" autocomplete="off" required>
 
             </div>
 			
@@ -249,7 +252,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                     Question 9&nbsp; &nbsp; &nbsp;&nbsp; </label>
 
 
-                <input type="text" name="text9" id="text9" placeholder="Type Here" autocomplete="off" >
+                <input type="text" name="text9" id="text9" placeholder="Type Here" autocomplete="off" required>
 
             </div>
 
@@ -260,7 +263,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
 
 
-                <input type="text" name="text10" id="text10" placeholder="Type Here" autocomplete="off" >
+                <input type="text" name="text10" id="text10" placeholder="Type Here" autocomplete="off" required>
                 <span class="suggestion-container"></span>
                 <div class="icons-container">
                 </div>
@@ -275,7 +278,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
 
 
-                    <input type="text" name="text11" id="text11" placeholder="Type Here" autocomplete="off" >
+                    <input type="text" name="text11" id="text11" placeholder="Type Here" autocomplete="off" required>
                     <span class="suggestion-container"></span>
                     <div class="icons-container">
 
@@ -290,7 +293,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
 
                         <input type="text" name="text12" id="text12" placeholder="Type Here" autocomplete="off"
-                            >
+                            required>
                         <span class="suggestion-container"></span>
                         <div class="icons-container">
 
@@ -309,7 +312,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
 
                             <input type="text" name="text13" id="text13" placeholder="Type Here" autocomplete="off"
-                                >
+                                required>
                             <span class="suggestion-container"></span>
                             <div class="icons-container">
 
@@ -324,7 +327,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
 
                                 <input type="text" name="text14" id="text14" placeholder="Type Here" autocomplete="off"
-                                    >
+                                    required>
                                 <span class="suggestion-container"></span>
                        <div class="icons-container">
 									
@@ -348,7 +351,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
 
                                     <input type="text" name="text15" id="text15" placeholder="Type Here"
-                                        autocomplete="off" >
+                                        autocomplete="off" required>
                                     <span class="suggestion-container"></span>
                                     <div class="icons-container">
 
@@ -363,16 +366,16 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
 
                                         <input type="text" name="text16" id="text16" placeholder="Type Here"
-                                            autocomplete="off" >
+                                            autocomplete="off" required>
                                         <span class="suggestion-container"></span>
                                         <div class="icons-container">
 
                                         </div>
 										
-										 <input type="hidden" name="timestamp" id="timestamp" value="time">
-	<input type="hidden" name="Group_Number" id="Group_Number" value="test">
-										<input type="hidden" name="PageNumber" id="PageNumber" value="Diagnostic">
-										<input type="hidden" name="IP-Address" id="IP-Address">
+										 <input type="hidden" name="timestamp" id="timestamp" value="time" </input>
+	<input type="hidden" name="Group_Number" id="Group_Number" value="test"</input>
+										<input type="hidden" name="PageNumber" id="PageNumber" value="Diagnostic" </input>
+										<input type="hidden" name="IP-Address" id="IP-Address" </input>
 										
 	  </form>
 <script>
@@ -416,10 +419,9 @@ function getIP(json) {
 								
 								</p>
 	<br>
-								<label> I Understand</label>	<input type=radio value="yes" name="yes" </input>
 	
- <button class="button" onclick="SubForm()" >Submit</button>
-									
+ <button class="button" onclick="SubForm()">Submit</button>
+
 	
 </body>
 
