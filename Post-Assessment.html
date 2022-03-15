@@ -17,10 +17,13 @@
   crossorigin="anonymous"></script>
 <script>
 function SubForm (){
-    $.ajax({
-        url:'https://api.apispreadsheets.com/data/AyV73HETr2BBZXZq/',
-        type:'post',
+   $.ajax({
+        url:"https://api.apispreadsheets.com/data/wQurLWdPNih04biP/",
+        type:"post",
         data:$("#myForm").serializeArray(),
+			headers:{
+					accessKey: "c7fa0ee63109efe7b4db10f4ca87d2be",
+					secretKey: "78cc8ef4af06b2d979256f98d017b7d0"},
         success: function(){
           alert("Form Data Submitted :)")
 		 window.location.href = 'RedoDemographics.html';	

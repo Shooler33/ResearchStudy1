@@ -19,9 +19,12 @@
 <script>
 function SubForm (){
     $.ajax({
-        url:'https://api.apispreadsheets.com/data/AyV73HETr2BBZXZq/',
-        type:'post',
+        url:"https://api.apispreadsheets.com/data/wQurLWdPNih04biP/",
+        type:"post",
         data:$("#myForm").serializeArray(),
+			headers:{
+					accessKey: "c7fa0ee63109efe7b4db10f4ca87d2be",
+					secretKey: "78cc8ef4af06b2d979256f98d017b7d0"},
         success: function(){
           alert("Form Data Submitted :)")
 		window.location.href = 'Post-Assessment.html';	
@@ -1113,7 +1116,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
     <!-- Create Form -->
 <form id="myForm"/>
 	
-	<section class="hero" id="hero"<h3>Progress</h3> <br>
+	<section class="hero" id="hero"><h3>Progress</h3> <br>
 <progress value = "6" max = "8"/> </section>
 
         <!-- Details -->
@@ -1330,7 +1333,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 										
 										 <input type="hidden" name="timestamp" id="timestamp" value="time" </input>
 	
-										<input type="hidden" name="PageNumber" id="PageNumber" value="TreatmentSmallList" </input>
+										<input type="hidden" name="PageNumber" id="PageNumber" value="TreatmentSmall" </input>
 										<input type="hidden" name="IP-Address" id="IP-Address" </input>
 										
 	  </form>
