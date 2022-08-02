@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/singlePageTemplate.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:"https://api.apispreadsheets.com/data/wQurLWdPNih04biP/",
+        type:"post",
+        data:$("#myForm").serializeArray(),
+			headers:{
+					accessKey: "c7fa0ee63109efe7b4db10f4ca87d2be",
+					secretKey: "78cc8ef4af06b2d979256f98d017b7d0"},
+        success: function(){
+          alert("Form Data Submitted :)")
+			if (document.getElementById("Group_Number").value == 4)
+				{ window.location.href= 'Page2PredictS+revised.html'; }
+			
+			else if(document.getElementById("Group_Number").value == 3)
+				{ window.location.href= 'Page2PredictV_revised.html'; }
+			
+			
+			else if(document.getElementById("Group_Number").value == 2)
+				{ window.location.href= 'Page2C_revised.html'; }
+			
+			
+			else if(document.getElementById("Group_Number").value == 1)
+				{ window.location.href= 'Page2PredictI_revised.html'; }
+			
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+	
+	
+	<script>
+var today = new Date();
+
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		 document.getElementById('timestamp').value = time;
+
+</script>
+    <title>
+
+        CCSU Survey
+    </title>
+
+    <style>
+            /* Styling the Body element i.e. Color,
+        Font, Alignment */
+        body {
+            background-color: #474747;
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        form-inline {}
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 80%;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #E6E6E6;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hidden {}
+
+        #tab-key {}
+
+        #tab-key {}
+
+        #tab-key {}
+
+        #hidden {}
+
+        #enter-key {}
+    </style>
+	
+	
+	
+	
+	
+  </head>
+
+
+
+<body class="Body1">
+
+
+    <!-- Create Form -->
+    <form id="myForm"/>
+	
+	<section class="hero" id="hero"><h3>Progress</h3> <br>
+<progress value = "4" max = "8"/> </section>
+
+
+
+        <!-- Details -->
+        <section class="Normal" id="Directions1" style="text-align:left">
+            <h2 class="Normal">Directions:</h2>
+            <p style="font-size:20px"> &nbsp; Please write two-sentence stories about each picture. <br> 
+&nbsp; Please type slowly; our algorithm is compiling data as you type.<b> <br> 
+&nbsp; If you do not complete all questions and/ or do not use complete sentences, <br>
+&nbsp; you will not complete the task and will not be paid.</b></p>  
+			<p style="font-size:20px"> &nbsp; Feel free to be creative!</p>
+
+
+<img src="Catbusiness.png" alt="cats" width="400 px"/>
+
+            <div class="form-control">
+                <label for="Question1" id="Question-1">
+                    Question 1&nbsp; &nbsp;&nbsp; </label>
+                            <input type="text" name="text1" id="text1" placeholder="Type Here" autocomplete="off" required >
+ </div>
+		
+            <div class="form-control">
+                <label for="Question2" id="Question-2">
+                    Question 2&nbsp; &nbsp; &nbsp; </label>
+
+                <input type="text" name="text2" id="text2" placeholder="Type Here" autocomplete="off" required>
+
+            </div>
+			
+			<img src="Doctors.png" alt="doctors" width="400 px">
+
+            <div class="form-control">
+                <label for="Question3" id="Question-3">
+                    Question 3&nbsp; &nbsp;&nbsp; </label>
+
+
+                <input type="text" name="text3" id="text3" placeholder="Type Here" autocomplete="off" required>
+
+
+            </div>
+
+
+            <div class="form-control">
+                <label for="Question4" id="Question-4">
+                    Question 4&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </label>
+
+
+                <input type="text" name="text4" id="text4" placeholder="Type Here" autocomplete="off" required>
+
+            </div>
+
+			
+			<img src="Hike.png" alt:"hike" width="400px" />
+
+            <div class="form-control">
+                <label for="Question5" id="Question-5">
+                    Question 5&nbsp;&nbsp; </label>
+                <input type="text" name="text5" id="text5" placeholder="Type Here" autocomplete="off" required>
+</div>
+			
+			
+            <div class="form-control">
+                <label for="Question6" id="Question-6">
+                    Question 6&nbsp; &nbsp; &nbsp; </label>
+
+
+                <input type="text" name="text6" id="text6" placeholder="Type Here" autocomplete="off" required>
+
+            </div>
+			
+			
+			<img src="Line.png" alt="line" width="400 px"/>
+			
+
+            <div class="form-control">
+                <label for="Question7" id="Question-7">
+                    Question 7&nbsp; &nbsp; &nbsp; </label>
+
+
+                <input type="text" name="text7" id="text7" placeholder="Type Here" autocomplete="off" required>
+
+
+            </div>
+
+            <div class="form-control">
+                <label for="Question8" id="Question-8">
+                    Question 8&nbsp; &nbsp; &nbsp; </label>
+
+
+                <input type="text" name="text8" id="text8" placeholder="Type Here" autocomplete="off" required>
+
+            </div>
+			
+			
+										
+										 <input type="hidden" name="timestamp" id="timestamp" value="time" </input>
+	<input type="hidden" name="Group_Number" id="Group_Number" value="test"</input>
+										<input type="hidden" name="PageNumber" id="PageNumber" value="Diagnostic" </input>
+										<input type="hidden" name="IP-Address" id="IP-Address" </input>
+										
+	  </form>
+<script>
+var today = new Date();
+var time = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+ "," +today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  document.getElementById("timestamp").value = time;
+		
+		
+
+</script>
+	
+	<script>
+function getIP(json) {
+  
+}
+</script>
+<script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"> </script>
+	
+	<script type="application/javascript">
+  function getIP(json) {
+    document.getElementById("IP-Address", json.ip).value = json.ip;
+  }
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+	
+	<script>
+		
+			
+			
+		var STEP1 = Math.floor( Math.random() * 4 ) + 1;
+					
+			document.getElementById("Group_Number").value = STEP1;
+	
+	</script>
+	 <br>
+									
+	<p style:"font-size=30px"> Before pressing submit, please check to ensure you have answered all questions and have used complete sentences. <br> <br> <b> If you do not, you will not complete the task and will not be paid. </b>     
+								
+								</p>
+	<br>
+	
+ <button class="button" onclick="SubForm()">Submit</button>
+
+	
+</body>
+
+</html>
