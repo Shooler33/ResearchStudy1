@@ -62,7 +62,7 @@ function SubForm (){
             <label for="gender" id="gender-response">
            With what gender do you most identify? <br>
   <label>
-    <input type="radio" name="gender" value="male" required>
+    <input type="radio" name="gender" value="male">
     Male
   </label><br>
 
@@ -92,8 +92,8 @@ function SubForm (){
             </label>
  
             <!-- Input Type Text -->
-            <input name="age" type="number" oninput="this.value=(parseInt(this.value)||0 && this.value=(parseInt(this.value)<100)" autofocus="" value="age"
-                   id="age-answer" placeholder="Enter your age" required />
+            <input name="age" type="number" oninput="this.value=(parseInt(this.value)||0 && this.value=(parseInt(this.value)<100)" value="age"
+                   placeholder="Enter your age" required />
 		
         </div> <br>
  
@@ -232,13 +232,7 @@ function SubForm (){
 				
   </div> 
         
-  <! Comments suggestions> 
-  
-  <div class="form-control">
-	    <label for="comment">
-                Any comments or suggestions
-            </label>
-	  <input type="text" required="required" name="comments" id="comments" width="maximum">
+ 
           
  <br>
 	  <br>
